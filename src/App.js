@@ -27,20 +27,22 @@ function App() {
   ];
 
   const [calValue, setCalValue] = useState("");
-  const OnButtonClicked=(buttonValue)=>{
-    
-    if (buttonValue==="C"){
-      setCalValue("")
+  const OnButtonClicked = (buttonValue) => {
+    try {
+      if (buttonValue === "C") {
+        setCalValue("");
+      } else if (buttonValue === "=") {
+        const result = eval(calValue);
+        setCalValue(result);
+      } else {
+        const displayValue = calValue + buttonValue;
+        setCalValue(displayValue);
+      }
+    } catch (error) {
+      // Handle the error gracefully, e.g., display an error message
+      console.error("An error occurred:", error.message);
+      setCalValue("Invalid expression ");
     }
-    else if(buttonValue==="="){
-      const result= eval(calValue);
-      setCalValue(result);
-    }
-    else{
-      const displaValue=calValue+buttonValue;
-      setCalValue(displaValue)
-    }
-
   };
   return (
     <div className={styles.cal_div}>
