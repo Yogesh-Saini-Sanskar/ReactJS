@@ -1,0 +1,18 @@
+.display_parent {
+  width: inherit;
+  padding: 20px 20px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.082);
+}
+
+.input_div {
+  width: -webkit-fill-available;
+  background-color: rgba(223, 214, 214, 0.274);
+  border-radius: 15px;
+  height: 50px;
+  color: white;
+  padding: 5px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 20px;
+}
